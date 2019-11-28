@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col">
+        
+
+          <%= form_for @message, remote: true do |f| %>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1"></label>
+              <input type="text" class="form-control" name="message[content]" id="message_content" aria-describedby="emailHelp" placeholder="Enter chat">
+              <small id="emailHelp" class="form-text text-muted">Live chat with action cable</small>
+            </div>
+
+            <%= f.submit "Send", class: "btn btn-primary" %>
+            
+          <% end %>
+
+          <div id="message">
+          </div>
+
+
+    </div>
+  </div>
+</div>
+
+<br>
+
+
+<div class="row justify-content-md-center">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">History Chat</h5>
+        <% @histories.each do |h| %>
+          <p class="card-text"><%= h.content %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
