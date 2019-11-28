@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Dependencies
 
-Things you may want to cover:
+* Rails 6.0.1
+* Webpacker
+* jQuery
+* Bootstrap 4
 
-* Ruby version
+## Setup
 
-* System dependencies
+* `git clone git@github.com:asharmubasir/action_cable_test.git`
+* edit `database.yml` with your own credentials (postgreSQL)
+* `rails db:create && rails db:migrate`
 
-* Configuration
+## Running apps
+* run `rails s`
+* open new tab and run `bin/webpack-dev-server`
 
-* Database creation
+## Browser
+* go to `localhost:3000`
+* open another browser or private browser and go to `localhost:3000` as well
 
-* Database initialization
+### run `rspec` to run unit test
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Result
+![GitHub Logo](/public/chat.png)
