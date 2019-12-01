@@ -12,9 +12,19 @@ consumer.subscriptions.create("RoomChannel", {
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
+    var comment_template = '<blockquote class="blockquote text-right">'+
+                        '<p class="mb-0">'+
+                          data.msg + 
+                        '</p>'+
+
+                        '<footer class="blockquote-footer">'+ 
+                          data.user + 
+                        '</footer>' +
+                        
+                      '</blockquote>'
 
     if(data.type == 'comment'){
-      $('#comments').append('<div class="message"> ' + data.msg + '</div>')
+      $('#comments').prepend(comment_template)
     }else{
       $('#message').append('<div class="message"> ' + data.msg + '</div>')
     }

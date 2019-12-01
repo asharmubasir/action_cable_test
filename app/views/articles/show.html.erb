@@ -27,9 +27,25 @@
           <%= render 'comments/form' %>
         </div>
 
-        <div id="comments" class="onlyComment">
-          
-        </div>
+        <% if @article.comments_count >= 1 %>
+          <small class="form-text text-muted"> <%= @article.comments_count %> comments from this article </small>
+
+          <div id="comments" class="onlyComment">
+            <% @comments.each do |c| %>
+              <blockquote class="blockquote text-right">
+                <p class="mb-0">
+                  <%= c.content %>
+                </p>
+
+                <footer class="blockquote-footer">
+                  <%= c.user.name %>
+                </footer>
+
+              </blockquote>
+            <% end %>
+          </div>
+
+        <% end %>
 
       </div>
 
