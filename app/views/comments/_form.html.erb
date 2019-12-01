@@ -1,0 +1,10 @@
+<%= form_with url: article_comments_path(@article), remote: true do |f| %>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="comment[content]" id="comment_content" aria-describedby="emailHelp" placeholder="Enter comment here">
+    <small class="form-text text-muted">Live comment with action cable</small>
+  </div>
+
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+  
+<% end %>

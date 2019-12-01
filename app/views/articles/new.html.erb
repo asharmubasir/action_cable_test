@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col">
+        
+
+          <%= form_with url: articles_path, local: true do %>
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input name="article[title]" type="text" class="form-control" id="title" aria-describedby="emailHelp" placeholder="Title">
+            </div>
+            <div class="form-group">
+              <label for="content">Content</label>
+              <textarea name="article[content]" class="form-control" id="content" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          <% end %>
+
+    </div>
+  </div>
+</div>
+

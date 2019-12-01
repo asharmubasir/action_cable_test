@@ -12,18 +12,25 @@ consumer.subscriptions.create("RoomChannel", {
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
-    $('#message').append('<div class="message"> ' + data.msg + '</div>')
+
+    if(data.type == 'comment'){
+      $('#comments').append('<div class="message"> ' + data.msg + '</div>')
+    }else{
+      $('#message').append('<div class="message"> ' + data.msg + '</div>')
+    }
+
   }
 });
 
 let submit_messages;
 
 $(document).on('turbolinks:load', function () {
-  submit_messages()
+  submit_messages('#message_content')
+  submit_messages('#comment_content')
 })
 
-submit_messages = function () {
-  $('#message_content').on('keydown', function (event) {
+submit_messages = function (target) {
+  $(target).on('keydown', function (event) {
     if (event.keyCode == 13) {
       $('input').click()
       event.target.value = ''

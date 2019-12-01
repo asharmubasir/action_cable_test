@@ -3,8 +3,8 @@ default: &default
   encoding: unicode
   pool: 5
   database: rails_channel_development
-  username: your_user_name
-  password: your_password
+  username: ashar
+  password: password
   host: localhost
   port: 5432
   timeout: 10000

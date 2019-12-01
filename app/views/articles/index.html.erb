@@ -1,0 +1,22 @@
+<h1> Articles </h1>
+
+<table class="table table-borderless">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">By</th>
+      <th scope="col">Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |a| %>
+      <tr>
+        <td><%= link_to a.title, article_path(a) %></td>
+        <td><%= a.user.email %></td>
+        <td><%= time_ago_in_words(a.created_at) %> ago</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'new article', new_article_path %>

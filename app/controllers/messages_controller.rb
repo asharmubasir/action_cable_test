@@ -6,9 +6,9 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.create(msg_params)
+    @message = Message.new(msg_params)
     if @message.save
-      ActionCable.server.broadcast "room_channel", msg: @message.content
+      Services::BroadcastService.new(@message.content, current_user, 'chat').send!
     end
   end
 

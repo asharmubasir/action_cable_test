@@ -10,6 +10,15 @@
   </head>
 
   <body>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= link_to 'logout', destroy_user_session_path, method: :delete if user_signed_in? %>
+    <%= link_to 'Chat Room', messages_path if user_signed_in? %>
+    <%= link_to 'Articles', articles_path if user_signed_in? %>
+    <%= link_to 'Login', new_user_session_path unless user_signed_in? %>
+
   
     <%= yield %>
 

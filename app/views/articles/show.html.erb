@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col">
+
+      <div id="title">
+        <label><strong> Title </strong></label>
+        <div>
+          <%= @article.title %>
+        </div>
+      </div>
+
+      <br>
+
+      <div id="content">
+        <label><strong> Content </strong></label>
+        <div>
+          <%= @article.content %>
+        </div>
+      </div>
+
+
+      <br><br><br>
+
+      <div>
+        <label><strong> Comments </strong></label>
+        <div>
+          <%= render 'comments/form' %>
+        </div>
+
+        <div id="comments" class="onlyComment">
+          
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
