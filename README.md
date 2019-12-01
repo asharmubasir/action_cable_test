@@ -27,4 +27,5 @@
 ## Result
 ![GitHub Logo](/public/chat.png)
 
-### run `rspec` to run unit test
+
+run `rspec` to run unit test
