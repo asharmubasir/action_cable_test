@@ -21,11 +21,22 @@
 * open new tab and run `bin/webpack-dev-server`
 
 ## Browser
-* go to `localhost:3000`
-* open another browser or private browser and go to `localhost:3000` as well
+### Chat feature
 
-## Result
+* go to `localhost:3000/messages`
+* open another browser or private browser and go to `localhost:3000/messages` as well
+
+### Result
 ![GitHub Logo](/public/chat.png)
 
+### Comment feature
 
-run `rspec` to run unit test
+* go to `localhost:3000/articles/:id`
+* open another browser or private browser and go to `localhost:3000/articles/:id` as well
+
+### Result
+![GitHub Logo](/public/comment.png)
+
+## Rspec
+* run `rails db:test:prepare`
+* run `rspec` to run unit test
