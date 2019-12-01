@@ -3,6 +3,7 @@
 ## Dependencies
 
 * Rails 6.0.1
+* Devise
 * Webpacker
 * jQuery
 * Bootstrap 4
@@ -39,4 +40,4 @@
 
 ## Rspec
 * run `rails db:test:prepare`
-* run `rspec` to run unit test
+* run `rspec`
